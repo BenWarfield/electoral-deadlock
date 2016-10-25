@@ -292,7 +292,7 @@ The Honorable	Eleanor	Holmes	Norton		2136 Rayburn House Office Building	Washingt
 The Honorable	Richard	B.	Nugent		1727 Longworth House Office Building	Washington	DC	20515-0911	FL11	N000185	R
 The Honorable	Devin		Nunes		1013 Longworth House Office Building	Washington	DC	20515-0522	CA22	N000181	R
 The Honorable	Beto		O’Rourke		1330 Longworth House Office Building	Washington	DC	20515-4316	TX16	O000170	D
-			Office of the Eighth Congressional District of Ohio		1011 Longworth House Office Building	Washington	DC	20515-3508	OH08		
+The Honorable	Warren		Davidson		1011 Longworth House Office Building	Washington	DC	20515-3508	OH08		R
 The Honorable	Pete		Olson		2133 Rayburn House Office Building	Washington	DC	20515-4322	TX22	O000168	R
 The Honorable	Steven	M.	Palazzo		331 Cannon House Office Building	Washington	DC	20515-2404	MS04	P000601	R
 The Honorable	Frank		Pallone	Jr.	237 Cannon House Office Building	Washington	DC	20515-3006	NJ06	P000034	D

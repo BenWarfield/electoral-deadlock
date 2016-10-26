@@ -1,4 +1,4 @@
-#!env perl
+#!/usr/bin/env perl
 use JSON::PP;
 use strict;
 
@@ -18,4 +18,5 @@ while (<>) {
 	push @reps,  \%row;
 }
 
-print JSON::PP->new->utf8->pretty->encode(\@reps);
+my $rep_json = JSON::PP->new->utf8->pretty->canonical->encode(\@reps);
+print "REPS = $rep_json;"

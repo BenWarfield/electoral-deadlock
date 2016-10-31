@@ -1,4 +1,3 @@
-
 <html>
 <head><title>FUN</title>
 <style>
@@ -1130,7 +1129,17 @@
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="cccc" />
 </svg>
-<p>Image based on https://commons.wikimedia.org/wiki/File:Blank_US_Map_With_Labels.svg (CC attribution share-alike)</p>
+<div id="top-line-summary">
+States with majorities for Trump: <span id="trump-state-count"></span>.
+States with majorities for Clinton: <span id="clinton-state-count"></span>.
+States with majorities for McMullin: <span id="mcmullin-state-count"></span>.
+<br>
+Final result: <span style="display:none" id="trump-elected">Trump Elected</span>
+<span style="display:none" id="clinton-elected" class="elected">Clinton Elected</span>
+<span style="display:none" id="mcmullin-elected" class="elected">McMullin Elected</span>
+<span style="display:none" id="deadlock-elected" class="elected">Deadlock</span>!
+</div>
+<p>Map image based on https://commons.wikimedia.org/wiki/File:Blank_US_Map_With_Labels.svg (CC attribution share-alike)</p>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="reps.js"></script>
 <script type="text/javascript" src="vote_counter.js"></script>

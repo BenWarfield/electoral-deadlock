@@ -5,11 +5,17 @@
 .bluestate, .bluestate + rect, g.bluestate path { fill: blue !important;}
 .redstate, .redstate + rect, g.redstate path { fill: red !important}
 .orangestate, .orangestate + rect, g.orangestate path { fill: orange !important}
-tspan {
-   // fill: pink !important;	
+#tally {
+    float: right;
+    padding-right: 20px;
 }
 </style>
 <body>
+<table id="tally">
+<thead><tr><th>State</th><th>R</th><th>D</th><th>O</th></tr></thead>
+<tbody>
+</tbody>
+</table>
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -1124,12 +1130,8 @@ tspan {
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="cccc" />
 </svg>
-<script>
-document.getElementById("RI").className.baseVal = "bluestate";
-document.getElementById("UT").className.baseVal = "orangestate";
-document.getElementById("NH").className.baseVal = "redstate";
-</script>
 <p>Image based on https://commons.wikimedia.org/wiki/File:Blank_US_Map_With_Labels.svg (CC attribution share-alike)</p>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="reps.js"></script>
 <script type="text/javascript" src="vote_counter.js"></script>
 </body>

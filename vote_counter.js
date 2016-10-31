@@ -1,4 +1,4 @@
-(function(w) {
+(function($) {
     var collate_reps = function(replist) {
 		var states = {};
 		for (var i = 0; i < replist.length; i++) {
@@ -27,25 +27,34 @@
 		if (dcount > rcount) {
 			partyClass = "bluestate";
 			partyLabel = "D";
-		} else {
+		} else if (rcount > dcount) {
 			partyClass = "redstate";
 			partyLabel = "R"
 		}
+		var trow = $("<tr><th>"+ state_code + "</th><td>" + rcount + "<td>" + dcount + "<td>" + icount + "</tr>");
+		$("#tally tbody").append(trow);
+
 		document.getElementById(state_code).className.baseVal = partyClass;
 		return partyLabel;
 	}
-	var state_reps = collate_reps(w.REPS);
+
+	var state_reps = collate_reps(window.REPS);
 	var dstates = 0;
 	var rstates = 0;
-	for (var s in state_reps) {
+	var state_codes = [];
+	for (var s in state_reps) state_codes.push(s);
+	state_codes.sort();
+	for (var i = 0; i < state_codes.length; i++) {
+		var s = state_codes[i];
 	    console.log("State", s, " has ", state_reps[s].length);
 		var foundParty = color_state(s, state_reps[s])
 	    if ("D" === foundParty) {
 	    	dstates++;
-	    } else {
+	    } else if ("R" === foundParty) {
 	    	rstates++;
 	    }
+
 	}
 	console.log("Final score: D", dstates, ", R", rstates);
 	
-})(window);
+})(jQuery);

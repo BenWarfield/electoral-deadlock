@@ -1,4 +1,4 @@
-Prefix	FirstName	MiddleName	LastName	Suffix	Address	City	State	Zip+4	114 St/Dis	BioguideID	Party	NONVOTING
+Prefix	FirstName	MiddleName	LastName	Suffix	Address	City	State	Zip+4	114 St/Dis	BioguideID	Party	FLAGS
 The Honorable	Ralph	Lee	Abraham		417 Cannon House Office Building	Washington	DC	20515-1805	LA05	A000374	R
 The Honorable	Alma	S.	Adams		222 Cannon House Office Building	Washington	DC	20515-3312	NC12	A000370	D
 The Honorable	Robert	B.	Aderholt		235 Cannon House Office Building	Washington	DC	20515-0104	AL04	A000055	R
@@ -18,7 +18,7 @@ The Honorable	Dan		Benishek		514 Cannon House Office Building	Washington	DC	2051
 The Honorable	Ami		Bera		1535 Longworth House Office Building	Washington	DC	20515-0507	CA07	B001287	D
 The Honorable	Donald	S.	Beyer	Jr.	431 Cannon House Office Building	Washington	DC	20515-4608	VA08	B001292	D
 The Honorable	Gus	M.	Bilirakis		2112 Rayburn House Office Building	Washington	DC	20515-0912	FL12	B001257	R
-The Honorable	Mike		Bishop		428 Cannon House Office Building	Washington	DC	20515-2208	MI08	B001293	R
+The Honorable	Mike		Bishop		428 Cannon House Office Building	Washington	DC	20515-2208	MI08	B001293	R	LDS
 The Honorable	Rob		Bishop		123 Cannon House Office Building	Washington	DC	20515-4401	UT01	B001250	R
 The Honorable	Sanford	D.	Bishop	Jr.	2407 Rayburn House Office Building	Washington	DC	20515-1002	GA02	B000490	D
 The Honorable	Diane		Black		1131 Longworth House Office Building	Washington	DC	20515-4206	TN06	B001273	R
@@ -26,7 +26,7 @@ The Honorable	Marsha		Blackburn		2266 Rayburn House Office Building	Washington	D
 The Honorable	Rod		Blum		213 Cannon House Office Building	Washington	DC	20515-1501	IA01	B001294	R
 The Honorable	Earl		Blumenauer		1111 Longworth House Office Building	Washington	DC	20515-3703	OR03	B000574	D
 The Honorable	Suzanne		Bonamici		439 Cannon House Office Building	Washington	DC	20515-3701	OR01	B001278	D
-The Honorable	Madeleine	Z.	Bordallo		2441 Rayburn House Office Building	Washington	DC	20515-5301	GU00	B001245	D	YES
+The Honorable	Madeleine	Z.	Bordallo		2441 Rayburn House Office Building	Washington	DC	20515-5301	GU00	B001245	D	NV
 The Honorable	Mike		Bost		1440 Longworth House Office Building	Washington	DC	20515-1312	IL12	B001295	R
 The Honorable	Charles	W.	Boustany	Jr.	1431 Longworth House Office Building	Washington	DC	20515-1803	LA03	B001255	R
 The Honorable	Brendan	F.	Boyle		118 Cannon House Office Building	Washington	DC	20515-3813	PA13	B001296	D
@@ -57,12 +57,12 @@ The Honorable	Matt		Cartwright		1419 Longworth House Office Building	Washington	
 The Honorable	Kathy		Castor		205 Cannon House Office Building	Washington	DC	20515-0914	FL14	C001066	D
 The Honorable	Joaquin		Castro		212 Cannon House Office Building	Washington	DC	20515-4320	TX20	C001091	D
 The Honorable	Steve		Chabot		2371 Rayburn House Office Building	Washington	DC	20515-3501	OH01	C000266	R
-The Honorable	Jason		Chaffetz		2236 Rayburn House Office Building	Washington	DC	20515-4403	UT03	C001076	R
+The Honorable	Jason		Chaffetz		2236 Rayburn House Office Building	Washington	DC	20515-4403	UT03	C001076	R	LDS
 The Honorable	Judy		Chu		2423 Rayburn House Office Building	Washington	DC	20515-0527	CA27	C001080	D
 The Honorable	David	N.	Cicilline		2244 Rayburn House Office Building	Washington	DC	20515-3901	RI01	C001084	D
 The Honorable	Katherine	M.	Clark		1721 Longworth House Office Building	Washington	DC	20515-2105	MA05	C001101	D
 The Honorable	Yvette	D.	Clarke		2351 Rayburn House Office Building	Washington	DC	20515-3209	NY09	C001067	D
-The Honorable	Curt		Clawson		228 Cannon House Office Building	Washington	DC	20515-0919	FL19	C001102	R
+The Honorable	Curt		Clawson		228 Cannon House Office Building	Washington	DC	20515-0919	FL19	C001102	R	LDS
 The Honorable	Wm.	Lacy	Clay		2428 Rayburn House Office Building	Washington	DC	20515-2501	MO01	C001049	D
 The Honorable	Emanuel		Cleaver		2335 Rayburn House Office Building	Washington	DC	20515-2505	MO05	C001061	D
 The Honorable	James	E.	Clyburn		242 Cannon House Office Building	Washington	DC	20515-4006	SC06	C000537	D
@@ -217,7 +217,7 @@ The Honorable	Ann		Kirkpatrick		201 Cannon House Office Building	Washington	DC	2
 The Honorable	John		Kline		2439 Rayburn House Office Building	Washington	DC	20515-2302	MN02	K000363	R
 The Honorable	Stephen		Knight		1023 Longworth House Office Building	Washington	DC	20515-0525	CA25	K000387	R
 The Honorable	Ann	M.	Kuster		137 Cannon House Office Building	Washington	DC	20515-2902	NH02	K000382	D
-The Honorable	Raúl	R.	Labrador		1523 Longworth House Office Building	Washington	DC	20515-1201	ID01	L000573	R
+The Honorable	Raœl	R.	Labrador		1523 Longworth House Office Building	Washington	DC	20515-1201	ID01	L000573	R	LDS
 The Honorable	Darin		LaHood		2464 Rayburn House Office Building	Washington	DC	20515-1318	IL18	L000585	R
 The Honorable	Doug		LaMalfa		322 Cannon House Office Building	Washington	DC	20515-0501	CA01	L000578	R
 The Honorable	Doug		Lamborn		2402 Rayburn House Office Building	Washington	DC	20515-0605	CO05	L000564	R
@@ -237,7 +237,7 @@ The Honorable	David		Loebsack		1527 Longworth House Office Building	Washington	D
 The Honorable	Zoe		Lofgren		1401 Longworth House Office Building	Washington	DC	20515-0519	CA19	L000397	D
 The Honorable	Billy		Long		1541 Longworth House Office Building	Washington	DC	20515-2507	MO07	L000576	R
 The Honorable	Barry		Loudermilk		238 Cannon House Office Building	Washington	DC	20515-1011	GA11	L000583	R
-The Honorable	Mia	B.	Love		217 Cannon House Office Building	Washington	DC	20515-4404	UT04	L000584	R
+The Honorable	Mia	B.	Love		217 Cannon House Office Building	Washington	DC	20515-4404	UT04	L000584	R	LDS
 The Honorable	Alan	S.	Lowenthal		108 Cannon House Office Building	Washington	DC	20515-0547	CA47	L000579	D
 The Honorable	Nita	M.	Lowey		2365 Rayburn House Office Building	Washington	DC	20515-3217	NY17	L000480	D
 The Honorable	Frank	D.	Lucas		2405 Rayburn House Office Building	Washington	DC	20515-3603	OK03	L000491	R
@@ -288,7 +288,7 @@ The Honorable	Dan		Newhouse		1641 Longworth House Office Building	Washington	DC	
 The Honorable	Kristi	L.	Noem		2422 Rayburn House Office Building	Washington	DC	20515-4100	SD00	N000184	R
 The Honorable	Richard	M.	Nolan		2366 Rayburn House Office Building	Washington	DC	20515-2308	MN08	N000127	D
 The Honorable	Donald		Norcross		1531 Longworth House Office Building	Washington	DC	20515-3001	NJ01	N000188	D
-The Honorable	Eleanor	Holmes	Norton		2136 Rayburn House Office Building	Washington	DC	20515-5101	DC00	N000147	D	YES
+The Honorable	Eleanor	Holmes	Norton		2136 Rayburn House Office Building	Washington	DC	20515-5101	DC00	N000147	D	NV
 The Honorable	Richard	B.	Nugent		1727 Longworth House Office Building	Washington	DC	20515-0911	FL11	N000185	R
 The Honorable	Devin		Nunes		1013 Longworth House Office Building	Washington	DC	20515-0522	CA22	N000181	R
 The Honorable	Beto		O’Rourke		1330 Longworth House Office Building	Washington	DC	20515-4316	TX16	O000170	D
@@ -306,11 +306,11 @@ The Honorable	Ed		Perlmutter		1410 Longworth House Office Building	Washington	DC
 The Honorable	Scott		Perry		1207 Longworth House Office Building	Washington	DC	20515-3804	PA04	P000605	R
 The Honorable	Scott	H.	Peters		1122 Longworth House Office Building	Washington	DC	20515-0552	CA52	P000608	D
 The Honorable	Collin	C.	Peterson		2204 Rayburn House Office Building	Washington	DC	20515-2307	MN07	P000258	D
-The Honorable	Pedro	R.	Pierluisi		2410 Rayburn House Office Building	Washington	DC	20515-5401	PR00	P000596	D	YES
+The Honorable	Pedro	R.	Pierluisi		2410 Rayburn House Office Building	Washington	DC	20515-5401	PR00	P000596	D	NV
 The Honorable	Chellie		Pingree		2162 Rayburn House Office Building	Washington	DC	20515-1901	ME01	P000597	D
 The Honorable	Robert		Pittenger		224 Cannon House Office Building	Washington	DC	20515-3309	NC09	P000606	R
 The Honorable	Joseph	R.	Pitts		420 Cannon House Office Building	Washington	DC	20515-3816	PA16	P000373	R
-The Honorable	Stacey	E.	Plaskett		509 Cannon House Office Building	Washington	DC	20515-5500	VI00	P000610	D	YES
+The Honorable	Stacey	E.	Plaskett		509 Cannon House Office Building	Washington	DC	20515-5500	VI00	P000610	D	NV
 The Honorable	Mark		Pocan		313 Cannon House Office Building	Washington	DC	20515-4902	WI02	P000607	D
 The Honorable	Ted		Poe		2412 Rayburn House Office Building	Washington	DC	20515-4302	TX02	P000592	R
 The Honorable	Bruce		Poliquin		426 Cannon House Office Building	Washington	DC	20515-1902	ME02	P000611	R
@@ -320,7 +320,7 @@ The Honorable	Bill		Posey		120 Cannon House Office Building	Washington	DC	20515-
 The Honorable	David	E.	Price		2108 Rayburn House Office Building	Washington	DC	20515-3304	NC04	P000523	D
 The Honorable	Tom		Price		100 Cannon House Office Building	Washington	DC	20515-1006	GA06	P000591	R
 The Honorable	Mike		Quigley		2458 Rayburn House Office Building	Washington	DC	20515-1305	IL05	Q000023	D
-The Honorable	Aumua Amata	Coleman	Radewagen		1339 Longworth House Office Building	Washington	DC	20515-5200	AS00	R000600	R	YES
+The Honorable	Aumua Amata	Coleman	Radewagen		1339 Longworth House Office Building	Washington	DC	20515-5200	AS00	R000600	R	NV
 The Honorable	Charles	B.	Rangel		2354 Rayburn House Office Building	Washington	DC	20515-3213	NY13	R000053	D
 The Honorable	John		Ratcliffe		325 Cannon House Office Building	Washington	DC	20515-4304	TX04	R000601	R
 The Honorable	Tom		Reed		2437 Rayburn House Office Building	Washington	DC	20515-3223	NY23	R000585	R
@@ -351,8 +351,8 @@ The Honorable	Bobby	L.	Rush		2188 Rayburn House Office Building	Washington	DC	20
 The Honorable	Steve		Russell		128 Cannon House Office Building	Washington	DC	20515-3605	OK05	R000604	R
 The Honorable	Paul	D.	Ryan		1233 Longworth House Office Building	Washington	DC	20515-4901	WI01	R000570	R
 The Honorable	Tim		Ryan		1421 Longworth House Office Building	Washington	DC	20515-3513	OH13	R000577	D
-The Honorable	Gregorio	Kilili Camacho	Sablan		423 Cannon House Office Building	Washington	DC	20515-5201	MP00	S001177	D	YES
-The Honorable	Matt		Salmon		2349 Rayburn House Office Building	Washington	DC	20515-0305	AZ05	S000018	R
+The Honorable	Gregorio	Kilili Camacho	Sablan		423 Cannon House Office Building	Washington	DC	20515-5201	MP00	S001177	D	NV
+The Honorable	Matt		Salmon		2349 Rayburn House Office Building	Washington	DC	20515-0305	AZ05	S000018	R	LDS
 The Honorable	Loretta		Sanchez		1211 Longworth House Office Building	Washington	DC	20515-0546	CA46	S000030	D
 The Honorable	Linda	T.	Sánchez		2329 Rayburn House Office Building	Washington	DC	20515-0538	CA38	S001156	D
 The Honorable	Mark		Sanford		2201 Rayburn House Office Building	Washington	DC	20515-4001	SC01	S000051	R
@@ -372,7 +372,7 @@ The Honorable	Terri	A.	Sewell		1133 Longworth House Office Building	Washington	D
 The Honorable	Brad		Sherman		2242 Rayburn House Office Building	Washington	DC	20515-0530	CA30	S000344	D
 The Honorable	John		Shimkus		2217 Rayburn House Office Building	Washington	DC	20515-1315	IL15	S000364	R
 The Honorable	Bill		Shuster		2268 Rayburn House Office Building	Washington	DC	20515-3809	PA09	S001154	R
-The Honorable	Michael	K.	Simpson		2312 Rayburn House Office Building	Washington	DC	20515-1202	ID02	S001148	R
+The Honorable	Michael	K.	Simpson		2312 Rayburn House Office Building	Washington	DC	20515-1202	ID02	S001148	R	LDS
 The Honorable	Kyrsten		Sinema		1530 Longworth House Office Building	Washington	DC	20515-0309	AZ09	S001191	D
 The Honorable	Albio		Sires		2342 Rayburn House Office Building	Washington	DC	20515-3008	NJ08	S001165	D
 The Honorable	Louise	McIntosh	Slaughter		2469 Rayburn House Office Building	Washington	DC	20515-3225	NY25	S000480	D
@@ -383,7 +383,7 @@ The Honorable	Jason		Smith		1118 Longworth House Office Building	Washington	DC	2
 The Honorable	Lamar		Smith		2409 Rayburn House Office Building	Washington	DC	20515-4321	TX21	S000583	R
 The Honorable	Jackie		Speier		2465 Rayburn House Office Building	Washington	DC	20515-0514	CA14	S001175	D
 The Honorable	Elise	M.	Stefanik		512 Cannon House Office Building	Washington	DC	20515-3221	NY21	S001196	R
-The Honorable	Chris		Stewart		323 Cannon House Office Building	Washington	DC	20515-4402	UT02	S001192	R
+The Honorable	Chris		Stewart		323 Cannon House Office Building	Washington	DC	20515-4402	UT02	S001192	R	LDS
 The Honorable	Steve		Stivers		1022 Longworth House Office Building	Washington	DC	20515-3515	OH15	S001187	R
 The Honorable	Marlin	A.	Stutzman		2418 Rayburn House Office Building	Washington	DC	20515-1403	IN03	S001188	R
 The Honorable	Eric		Swalwell		129 Cannon House Office Building	Washington	DC	20515-0515	CA15	S001193	D

@@ -29,26 +29,26 @@
 		}
 	};
 
-	var color_state = function(state_code, rep_list) {
-		var dcount = 0;
-		var rcount = 0;
-		var icount = 0;
+	var color_state = function(state_code, rep_list, vote_func) {
+		if (undefined === vote_func) {
+		    vote_func = function(rep) { return rep.Party; };
+		}
+		var counts = { "R": 0, "D": 0, "O": 0};
 		for (var i = 0; i < rep_list.length; i++) {
-		    var party = rep_list[i].Vote;
-		    if ("R" === party) rcount++;
-			else if ("D" === party) dcount++;
-			else if ("O" === party) icount++;
+			var vote = vote_func(rep_list[i]);
+			rep_list[i].Vote = vote;
+			counts[vote]++;
 		}
 		var partyClass = "";
 		var partyLabel;
 		var majority = rep_list.length / 2;
-		if (dcount > majority) {
+		if (counts.D > majority) {
 			partyClass = "bluestate";
 			partyLabel = "D";
-		} else if (rcount > majority) {
+		} else if (counts.R > majority) {
 			partyClass = "redstate";
 			partyLabel = "R"
-		} else if (icount > majority) {
+		} else if (counts.O > majority) {
 			partyClass = "orangestate";
 			partyLabel = "O";
 		} else {
@@ -56,9 +56,9 @@
 		    partyLabel = "NONE";
 		}
 		var tally_row = $("#tally-" + state_code);
-		tally_row.find(".rcount").text(rcount);
-		tally_row.find(".dcount").text(dcount);
-		tally_row.find(".ocount").text(icount);
+		tally_row.find(".rcount").text(counts.R);
+		tally_row.find(".dcount").text(counts.D);
+		tally_row.find(".ocount").text(counts.O);
 
 		document.getElementById(state_code).className.baseVal = partyClass;
 		return partyLabel;
@@ -98,6 +98,6 @@
 	state_codes.sort();
 
 	init_tally_display(state_codes);
-	tally_scores(state_reps);
+	tally_scores(state_reps, function(rep) { return rep.LDS || rep.NEVERTRUMP ? "O" : rep.Party;});
 	
 })(jQuery);

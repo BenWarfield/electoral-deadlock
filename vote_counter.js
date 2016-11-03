@@ -6,21 +6,24 @@
 		// subject to later modification.
 		var states = {};
 		for (var i = 0; i < replist.length; i++) {
+			rep = replist[i];
 		    if (replist[i].Nonvoting) continue;
 		    replist[i].Vote = replist[i].Party;
+		    if (!rep.Name) {
+				rep.Name = rep.FirstName + " " + rep.MiddleName + " " + rep.LastName;
+		    }
 			var state = replist[i].State;
 			if (states[state] === undefined) {
 				states[state] = [];
 			}
-			states[state].push(replist[i])
+			states[state].push(rep);
 		}
 		return states;
 	};
 
-
 	var init_tally_display = function(state_codes) {
 		for (var i = 0; i < state_codes.length; i++) {
-		console.log("Adding row for " + state_codes[i]);
+			// console.log("Adding row for " + state_codes[i]);
 		    var code = state_codes[i];
 			var trow = $("<tr id='tally-" + code + "'><th>"+ code +
 				"</th><td class='rcount'><td class='dcount'><td class='ocount'></tr>");
@@ -70,7 +73,7 @@
 		var ostates = 0;
 		for (var i = 0; i < state_codes.length; i++) {
 			var s = state_codes[i];
-			console.log("State", s, " has ", state_reps[s].length);
+			// console.log("State", s, " has ", state_reps[s].length);
 			var foundParty = color_state(s, state_reps[s], vote_func)
 			if ("D" === foundParty) {
 				dstates++;
@@ -91,13 +94,48 @@
 
 		console.log("Final score: D", dstates, ", R", rstates);
 	};
-
+	var create_replist = function(findwinner) {
+		if (undefined === findwinner) {
+			findwinner = function(r) {
+				var winparty = r.current_party;
+				if (r.prediction === "safeR") winparty = "R";
+				if (r.prediction === "safeD") winparty = "D";
+				return winparty;
+			};
+		}
+		var newcongress = [];
+		var oldreps = REPS;
+		for (var i = 0; i < oldreps.length; i++) {
+			var rep = oldreps[i];
+			if (rep.Nonvoting) continue;
+			var code = rep.State + rep.District;
+			var race = RACES[code];
+			// console.log("index " + i + " code " + code + " race ", race);
+			var digested = {State: rep.State, District: rep.District};
+			var winner = findwinner(race);
+			digested.Party = winner;
+			digested.Name = race.candidates[winner];
+			if (rep.Flags) {
+				if (digested.Name == race.INCUMBENT) {
+					// and screw you for making list iteration annoying, JS
+					digested.NEVERTRUMP = rep.NEVERTRUMP;
+					digested.LDS = rep.LDS;
+					//console.log("Keeping flags for " + rep.Name)
+				} else {
+					console.log("Ditching flags for " + rep.Name)
+				}
+			}
+			newcongress.push(digested)
+			// console.log(digested);
+		}
+		return newcongress;
+	};
 	var state_reps = collate_reps(window.REPS);
 	var state_codes = [];
 	for (var s in state_reps) state_codes.push(s);
 	state_codes.sort();
-
+	var c115 = collate_reps(create_replist());
 	init_tally_display(state_codes);
-	tally_scores(state_reps, function(rep) { return rep.LDS || rep.NEVERTRUMP ? "O" : rep.Party;});
+	tally_scores(c115, function(rep) { return rep.LDS || rep.NEVERTRUMP ? "O" : rep.Party;});
 	
 })(jQuery);

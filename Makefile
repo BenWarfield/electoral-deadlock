@@ -5,6 +5,6 @@ reps.js: text-labels-114.txt reps_to_json.pl
 races115.js: races.json races_digest.pl
 	./races_digest.pl races.json > races115.js
 check-deploy:
-	aws s3 sync  . s3://electoral-deadlock.com/ --exclude '*' --dryrun --include=*.html --include={races,reps}*.js
+	aws s3 sync  . s3://electoral-deadlock.com/ --exclude '*' --dryrun --include=*.html --include={races115,reps,vote_counter}.js
 deploy:
-	aws s3 sync  . s3://electoral-deadlock.com/ --exclude '*' --include=*.html --include={races,reps}*.js
+	aws s3 sync  . s3://electoral-deadlock.com/ --exclude '*' --include=*.html --include={races115,reps,vote_counter}.js

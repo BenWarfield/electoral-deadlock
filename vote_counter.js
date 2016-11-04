@@ -144,19 +144,24 @@
 	init_tally_display(state_codes);
 	
 	var CONGRESS = c114;
-	var VOTE_DECIDER = function(rep) { return rep.Party; };
 	var do_tally = function() {
-		tally_scores(CONGRESS, VOTE_DECIDER);
+		var lds_on = $("[name=vote_choices] [name=lds_mcmullin]").is(":checked");
+		var nt_on = $("[name=vote_choices] [name=nt_mcmullin]").is(":checked");
+		console.log("For this tally, LDS selection is " + lds_on + " and NT is " + nt_on);
+		var vote_decider = function(rep) {
+			if ( (lds_on && rep.LDS) || (nt_on && rep.NEVERTRUMP) ) {
+				return "O";
+			} else {
+				return rep.Party;
+			}
+		};
+		tally_scores(CONGRESS, vote_decider);
 		$("#tally").show();
 		$("#top-line-summary").show();
 	};
 	var create_congress = function(win_picker) {
 	    CONGRESS = collate_reps(create_replist(win_picker));
 	    do_tally();
-	};
-	var change_votes = function(vote_func) {
-		VOTE_DECIDER = vote_func;
-		do_tally();
 	};
 	var prediction_maker = function(result_map) {
 		return function(r) {
@@ -178,13 +183,5 @@
 	$("#c115_good_r").on("click", function() {
 		create_congress(prediction_maker({leanR:"R", tossup:"R", leanD: "R"}));});
 
-	$("#lds_for_mcmullin").on("click", function() {
-		change_votes(function(rep) { return rep.LDS ? "O" : rep.Party;});
-	});
-	$("#nt_for_mcmullin").on("click", function() {
-		change_votes(function(rep) { return rep.NEVERTRUMP ? "O" : rep.Party;});
-	});
-	$("#lds_and_nt_for_mcmullin").on("click", function() {
-		change_votes(function(rep) { return rep.LDS || rep.NEVERTRUMP ? "O" : rep.Party;});
-	});
+	$("form[name=vote_choices] input").on("change", do_tally);
 })(jQuery);

@@ -16,6 +16,7 @@
 </style>
 <body>
 <div>
+<form name="vote_choices">
 <h1>Pick your Congress!</h1>
 <ul><li id="c114">The 114th (Current) Congress</li>
 <li id="c115_safe">A version of the 115th Congress where almost no seats change hands</li>
@@ -27,10 +28,11 @@
 <h1>Who votes for McMullin?</h1>
 <p>By default, Representatives are assumed to vote for the candidate of their party.  Who breaks
 with the party to vote for McMullin instead of Trump?</p>
-<ul>
-<li id="lds_for_mcmullin">Members of the LDS Church</li>
-<li id="nt_for_mcmullin">Representatives who have expressed "Never-Trump" sentiments.</li>
-<li id="lds_and_nt_for_mcmullin">Members of the LDS Church <i>and</i> Representatives who have expressed "Never-Trump" sentiments.</li>
+<p>
+	<label for="lds_mcmullin"><input id="lds_mcmullin" name="lds_mcmullin" type="checkbox" value="lds" />Members of the LDS Church</label>
+	<label for="nt_mcmullin"><input id="nt_mcmullin" name="nt_mcmullin" type="checkbox" value="nt" />Representatives who have expressed "Never-Trump" sentiments.</label>
+</p>
+</form>
 </div>
 <table id="tally">
 <thead><tr><th>State</th><th>R</th><th>D</th><th>O</th></tr></thead>

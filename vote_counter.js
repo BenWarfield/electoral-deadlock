@@ -148,6 +148,7 @@
 	var do_tally = function() {
 		tally_scores(CONGRESS, VOTE_DECIDER);
 		$("#tally").show();
+		$("#top-line-summary").show();
 	};
 	var create_congress = function(win_picker) {
 	    CONGRESS = collate_reps(create_replist(win_picker));

@@ -90,7 +90,7 @@
 		if (rstates > 25) $("#trump-elected").show();
 		else if (dstates > 25) $("#clinton-elected").show();
 		else if (ostates > 25) $("#mcmullin-elected").show();
-		else $("#deadlock-elected).show()
+		else $("#deadlock-elected").show()
 
 		// console.log("Final score: D", dstates, ", R", rstates);
 	};

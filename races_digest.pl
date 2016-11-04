@@ -90,4 +90,4 @@ for my $district_race (@$data) {
 	$races{$key} = \%race;
 }
 
-print "RACES = " . $j->pretty->encode(\%races) . ";";
+print "RACES = " . $j->encode(\%races) . ";";

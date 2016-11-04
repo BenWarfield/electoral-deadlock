@@ -21,5 +21,5 @@ while (<>) {
 	push @reps,  \%row;
 }
 
-my $rep_json = JSON::PP->new->utf8->pretty->canonical->encode(\@reps);
+my $rep_json = JSON::PP->new->utf8->canonical->encode(\@reps);
 print "REPS = $rep_json;"

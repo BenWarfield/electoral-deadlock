@@ -18,13 +18,18 @@
 <div>
 <form name="vote_choices">
 <h1>Pick your Congress!</h1>
-<ul><li id="c114">The 114th (Current) Congress</li>
-<li id="c115_safe">A version of the 115th Congress where almost no seats change hands</li>
-<li id="c115_ok_d">A version where the Democrats have a good but not great night (toss-up races all go to Democrats)</li>
-<li id="c115_ok_r">A version where the Republicans have a good but not great night (toss-up races all go to Republicans)</li>
-<li id="c115_good_d">A version where the Democrats have a very good night (toss-up races all go to Democrats, and they pick up all the Leaning Republican seats)</li>
-<li id="c115_good_r">A version where the Republicans have a very good night (toss-up races all go to Republicans, and they pick up all the Leaning Democratic seats)</li>
-</ul>
+<p>
+    Depending how the election turns out, very different sets of Representatives may be voting.
+    What will the House look like?
+</p>
+<select name="congress">
+	<option selected="1" value="c114">The 114th (Current) Congress (for comparison purposes)</option>
+	<option value="c115_safe">A version of the 115th Congress where almost no seats change hands</option>
+	<option value="c115_ok_d">A version where the Democrats have a good but not great night (toss-up races all go to Democrats)</option>
+	<option value="c115_ok_r">A version where the Republicans have a good but not great night (toss-up races all go to Republicans)</option>
+	<option value="c115_good_d">A version where the Democrats have a very good night (toss-up races all go to Democrats, and they pick up all the Leaning Republican seats)</option>
+	<option value="c115_good_r">A version where the Republicans have a very good night (toss-up races all go to Republicans, and they pick up all the Leaning Democratic seats)</option>
+</select>
 <h1>Who votes for McMullin?</h1>
 <p>By default, Representatives are assumed to vote for the candidate of their party.  Who breaks
 with the party to vote for McMullin instead of Trump?</p>

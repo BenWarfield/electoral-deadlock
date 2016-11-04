@@ -95,20 +95,6 @@
 		// console.log("Final score: D", dstates, ", R", rstates);
 	};
 	var create_replist = function(findwinner) {
-		if (undefined === findwinner) {
-			findwinner = function(r) {
-				var winparty = r.current_party;
-				if (r.prediction === "safeR") {
-					console.log("Flipping " + r + " to R");
-					winparty = "R";
-				}
-				if (r.prediction === "safeD") {
-					console.log("Flipping " + r + " to D");
-					winparty = "D";
-				}
-				return winparty;
-			};
-		}
 		var newcongress = [];
 		var oldreps = REPS;
 		for (var i = 0; i < oldreps.length; i++) {
@@ -142,7 +128,7 @@
 	for (var s in c114) state_codes.push(s);
 	state_codes.sort();
 	init_tally_display(state_codes);
-	
+
 	var CONGRESS = c114;
 	var do_tally = function() {
 		var lds_on = $("[name=vote_choices] [name=lds_mcmullin]").is(":checked");
@@ -159,29 +145,29 @@
 		$("#tally").show();
 		$("#top-line-summary").show();
 	};
-	var create_congress = function(win_picker) {
-	    CONGRESS = collate_reps(create_replist(win_picker));
-	    do_tally();
-	};
-	var prediction_maker = function(result_map) {
-		return function(r) {
+	var get_congress_maker = function(prediction_results) {
+		var pick_race_winner = function(r) {
 			var winparty = r.current_party;
-			if (r.prediction && result_map[r.prediction]) {
-				winparty = result_map[r.prediction];
+			if (r.prediction && prediction_results[r.prediction]) {
+				winparty = prediction_results[r.prediction];
 			}
 			return winparty;
 		};
+		return function() { return collate_reps(create_replist(pick_race_winner));};
 	};
-	$("#c114").on("click", function(){ CONGRESS = c114; do_tally();});
-	$("#c115_safe").on("click", function(){create_congress(undefined);});
-	$("#c115_ok_d").on("click", function() {
-		create_congress(prediction_maker({leanD:"D", tossup:"D"}));});
-	$("#c115_ok_r").on("click", function() {
-		create_congress(prediction_maker({leanR:"R", tossup:"R"}));});
-	$("#c115_good_d").on("click", function() {
-		create_congress(prediction_maker({leanR:"D", tossup:"D", leanD: "D"}));});
-	$("#c115_good_r").on("click", function() {
-		create_congress(prediction_maker({leanR:"R", tossup:"R", leanD: "R"}));});
 
+	var congress_dispatch = {
+		c114: function() { return c114; },
+		c115_safe: get_congress_maker({safeD: "D", safeR: "R"}),
+		c115_ok_d: get_congress_maker({leanD:"D", tossup:"D", safeD: "D", safeR: "R"}),
+		c115_ok_r: get_congress_maker({leanR:"R", tossup:"R", safeD: "D", safeR: "R"}),
+		c115_good_d: get_congress_maker({leanR:"D", tossup:"D", leanD: "D", safeD: "D", safeR: "R"}),
+		c115_good_r: get_congress_maker({leanR:"R", tossup:"R", leanD: "R", safeD: "D", safeR: "R"})
+	};
 	$("form[name=vote_choices] input").on("change", do_tally);
+	$("form[name=vote_choices] [name=congress]").on("change", function() {
+		var congress_choice = $(this).val();
+		CONGRESS = congress_dispatch[congress_choice]();
+		do_tally();
+	});
 })(jQuery);
